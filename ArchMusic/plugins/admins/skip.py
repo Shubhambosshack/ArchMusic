@@ -23,12 +23,9 @@ from ArchMusic.utils.inline.play import (stream_markup,
 from ArchMusic.utils.stream.autoclear import auto_clean
 from ArchMusic.utils.thumbnails import gen_thumb
 
-# Commands
-SKIP_COMMAND = get_command("SKIP_COMMAND")
 
-
-@app.on_message(
-    filters.command(SKIP_COMMAND)
+@app.on_message
+    filters.command
     & filters.group
     & ~BANNED_USERS
 )
